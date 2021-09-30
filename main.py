@@ -36,7 +36,13 @@ class PixelApp:
         new_button.grid(column=0, row=0)
         
         save_button = Button(control_frame, text="Save")
-        save_button.grid(column=0, row=0)
+        save_button.grid(column=2, row=0)
+        
+        pen_button = Button(control_frame, text="Pen")
+        pen_button.grid(column=8, row=0)
+        
+        erase_button = Button(control_frame, text="Erase")
+        erase_button.grid(column=10, row=0)
         
     def tap_cell(self, event):
         print("Cell Taped")
