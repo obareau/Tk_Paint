@@ -44,6 +44,12 @@ class PixelApp:
         erase_button = Button(control_frame, text="Erase")
         erase_button.grid(column=10, row=0)
         
+        selected_colour_box = Frame(control_frame, borderwidth=2, relief="raised", bg="white")
+        selected_colour_box.grid(column=15, row=0, sticky=(N, E, S, W))
+        
+        pick_colour_button = Button(control_frame, text="Pick color")
+        pick_colour_button.grid(column=17, row=0)
+        
     def tap_cell(self, event):
         print("Cell Taped")
        
