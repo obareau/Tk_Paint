@@ -27,6 +27,16 @@ class PixelApp:
                 cell.bind("<Button-1>", self.tap_cell)
                 self.cells.append(cell)
         
+        # Control frame
+        control_frame = Frame(self.root, height=cell_length)
+        control_frame.grid(column=0, row=1 , sticky=(N, E, S, W))
+        
+        # Widgets
+        new_button = Button(control_frame, text="New")
+        new_button.grid(column=0, row=0)
+        
+        save_button = Button(control_frame, text="Save")
+        save_button.grid(column=0, row=0)
         
     def tap_cell(self, event):
         print("Cell Taped")
