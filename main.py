@@ -50,6 +50,7 @@ class PixelApp:
         pick_colour_button = Button(control_frame, text="Pick color")
         pick_colour_button.grid(column=17, row=0)
         
+        
     def tap_cell(self, event):
         print("Cell Taped")
        
