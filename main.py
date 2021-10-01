@@ -13,6 +13,8 @@ class PixelApp:
         
         self.colour_chooser = tkinter.colorchooser.Chooser(self.root)
         self.chosen_colour = None
+        self.is_pen_selected = False
+        self.is_eraser_selected = False
         
         self.drawing_grid = Canvas(self.root)    
         self.drawing_grid.grid(column=0, row=0, sticky=(N, E, S, W))
@@ -65,6 +67,15 @@ class PixelApp:
         
     def tap_cell(self, event):
         print("Cell Taped") # Just a test
+        widget = event.widget
+        index = self.cells.index(widget)
+        selected_cell = self.cells[index]
+        if self.is_eraser_selected:
+            selected_cell["bg"] = "white"
+        if self.is_pen_selected and self.chosen_colour != None:
+            selected_cell["bg"] = self.chosen_colour
+            
+            
         
     # Button logic    
     def press_new_button(self):
@@ -74,10 +85,14 @@ class PixelApp:
         print("Save button pressed") # Just a  test 
         
     def press_pencil_button(self):
-        print("Pencil button pressed") # Just a test   
+        print("Pencil button pressed") # Just a test
+        self.is_pen_selected = True
+        self.is_eraser_selected = False   
         
     def press_erase_button(self):
         print("Erase button pressed") # Just a test 
+        self.is_eraser_selected = True
+        self.is_pen_selected = False 
     
         
     def press_pick_colour_button(self):
