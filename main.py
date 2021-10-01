@@ -79,8 +79,15 @@ class PixelApp:
         
     # Button logic    
     def press_new_button(self):
-        print("New button pressed") # Just a testPress")    
-     
+        print("New button pressed") # Just a testPress")
+        for cell in self.cells:
+            cell["bg"] = "white"
+            self.selected_colour_box["bg"] = "white"
+            self.chosen_colour = None
+            self.is_pen_selected = False
+            self.is_eraser_selected = False
+
+                 
     def press_save_button(self):
         print("Save button pressed") # Just a  test 
         
