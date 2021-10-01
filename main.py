@@ -1,4 +1,5 @@
 from tkinter import *
+import tkinter.colorchooser
 
 class PixelApp:
     
@@ -9,6 +10,8 @@ class PixelApp:
         cell_length = 50
         grid_width = 20
         grid_height = 10
+        
+        self.colour_chooser = tkinter.colorchooser.Chooser(self.root)
         
         self.drawing_grid = Canvas(self.root)    
         self.drawing_grid.grid(column=0, row=0, sticky=(N, E, S, W))
@@ -74,9 +77,12 @@ class PixelApp:
         
     def press_erase_button(self):
         print("Erase button pressed") # Just a test 
+    
         
     def press_pick_colour_button(self):
-        print("Pick colour button pressed") # Just a test     
+        colour_info = self.colour_chooser.show() 
+        print(colour_info)
+            
         
 root = Tk()
 PixelApp(root)
