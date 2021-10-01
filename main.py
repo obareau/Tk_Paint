@@ -48,7 +48,7 @@ class PixelApp:
         selected_colour_box.grid(column=15, row=0, sticky=(N, E, S, W), padx=5, pady=5)
         
         pick_colour_button = Button(control_frame, text="Pick color")
-        pick_colour_button.grid(column=17, row=0, columnspan=3, sticky=(N, E, S, W), padx=8, pady=8)
+        pick_colour_button.grid(column=17, row=0, columnspan=3, sticky=(N, E, S, W), padx=7, pady=7)
         
         # Set mimimum cell size
         cols, rows = control_frame.grid_size()
