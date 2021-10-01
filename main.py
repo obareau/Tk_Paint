@@ -33,32 +33,32 @@ class PixelApp:
         
         # Widgets
         new_button = Button(control_frame, text="New")
-        new_button.grid(column=0, row=0)
+        new_button.grid(column=0, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
         save_button = Button(control_frame, text="Save")
-        save_button.grid(column=2, row=0)
+        save_button.grid(column=2, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
         pen_button = Button(control_frame, text="Pen")
-        pen_button.grid(column=8, row=0)
+        pen_button.grid(column=8, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
         erase_button = Button(control_frame, text="Erase")
-        erase_button.grid(column=10, row=0)
+        erase_button.grid(column=10, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
         selected_colour_box = Frame(control_frame, borderwidth=2, relief="raised", bg="white")
-        selected_colour_box.grid(column=15, row=0, sticky=(N, E, S, W))
+        selected_colour_box.grid(column=15, row=0, sticky=(N, E, S, W), padx=5, pady=5)
         
         pick_colour_button = Button(control_frame, text="Pick color")
-        pick_colour_button.grid(column=17, row=0)
+        pick_colour_button.grid(column=17, row=0, columnspan=3, sticky=(N, E, S, W), padx=8, pady=8)
         
         # Set mimimum cell size
         cols, rows = control_frame.grid_size()
         for col in range(cols):
             control_frame.columnconfigure(col, minsize=cell_length)
-        control_frame.rowconfigure(0, minsize=cell)
+        control_frame.rowconfigure(0, minsize=cell_length)
             
         
     def tap_cell(self, event):
-        print("Cell Taped")
+        print("Cell Taped") # Just a test
        
         
 root = Tk()
