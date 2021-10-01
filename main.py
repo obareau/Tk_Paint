@@ -97,7 +97,7 @@ class PixelApp:
         
         width  = x + 2000 # Need to be set manually regarding to monitor size
         height = y + 1000 
-        image_name = datetime.nown().strftime("%Y-%m-%d-%H-%M-%S") +".png"
+        image_name = datetime.now().strftime("%Y-%m-%d-%H-%M-%S") +".png"
         _ = ImageGrab.grab(bbox=(x, y , width, height)).save(image_name)
         
     def press_pencil_button(self):
