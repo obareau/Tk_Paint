@@ -32,22 +32,22 @@ class PixelApp:
         control_frame.grid(column=0, row=1 , sticky=(N, E, S, W))
         
         # Widgets
-        new_button = Button(control_frame, text="New")
+        new_button = Button(control_frame, text="New", command=self.press_new_button) 
         new_button.grid(column=0, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
-        save_button = Button(control_frame, text="Save")
+        save_button = Button(control_frame, text="Save", command=self.press_save_button)
         save_button.grid(column=2, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
-        pen_button = Button(control_frame, text="Pen")
+        pen_button = Button(control_frame, text="Pen", command=self.press_pen_button)
         pen_button.grid(column=8, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
-        erase_button = Button(control_frame, text="Erase")
+        erase_button = Button(control_frame, text="Erase", command=self.press_erase_button)
         erase_button.grid(column=10, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
         selected_colour_box = Frame(control_frame, borderwidth=2, relief="raised", bg="white")
         selected_colour_box.grid(column=15, row=0, sticky=(N, E, S, W), padx=5, pady=5)
         
-        pick_colour_button = Button(control_frame, text="Pick color")
+        pick_colour_button = Button(control_frame, text="Pick color", command=self.press_pick_colour_button)
         pick_colour_button.grid(column=17, row=0, columnspan=3, sticky=(N, E, S, W), padx=7, pady=7)
         
         # Set mimimum cell size
@@ -59,7 +59,22 @@ class PixelApp:
         
     def tap_cell(self, event):
         print("Cell Taped") # Just a test
-       
+        
+    # Button logic    
+    def press_new_button(self):
+        print("New button pressed") # Just a testPress")    
+     
+    def press_save_button(self):
+        print("Save button pressed") # Just a  test 
+        
+    def press_pen_button(self):
+        print("Pen button pressed") # Just a test   
+        
+    def press_erase_button(self):
+        print("Erase button pressed") # Just a test 
+        
+    def press_pick_colour_button(self):
+        print("Pick colour button pressed") # Just a test     
         
 root = Tk()
 PixelApp(root)
