@@ -38,10 +38,12 @@ class PixelApp:
         save_button = Button(control_frame, text="Save", command=self.press_save_button)
         save_button.grid(column=2, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
-        pen_button = Button(control_frame, text="Pen", command=self.press_pen_button)
-        pen_button.grid(column=8, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
+        self.pencil_image = PhotoImage(file="pencil.png").subsample(2,3)
+        pencil_button = Button(control_frame, text="Pencil", image=self.pencil_image, command=self.press_pencil_button)
+        pencil_button.grid(column=8, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
-        erase_button = Button(control_frame, text="Erase", command=self.press_erase_button)
+        self.eraser_image = PhotoImage(file="eraser.png").subsample(2,3)
+        erase_button = Button(control_frame, text="Erase", image=self.eraser_image, command=self.press_erase_button)
         erase_button.grid(column=10, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
         selected_colour_box = Frame(control_frame, borderwidth=2, relief="raised", bg="white")
@@ -67,8 +69,8 @@ class PixelApp:
     def press_save_button(self):
         print("Save button pressed") # Just a  test 
         
-    def press_pen_button(self):
-        print("Pen button pressed") # Just a test   
+    def press_pencil_button(self):
+        print("Pencil button pressed") # Just a test   
         
     def press_erase_button(self):
         print("Erase button pressed") # Just a test 
