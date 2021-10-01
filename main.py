@@ -1,7 +1,7 @@
 from tkinter import *
 import tkinter.colorchooser
 from PIL import ImageGrab
-
+from datetime import datetime
 class PixelApp:
     
     def __init__(self, root):
@@ -95,9 +95,10 @@ class PixelApp:
         x= self.root.winfo_rootx() + self.drawing_grid.winfo_x()
         y= self.root.winfo_rooty() + self.drawing_grid.winfo_y() +35 # we have to add the app bar --> 35 guess and try
         
-        
         width  = x + 2000 # Need to be set manually regarding to monitor size
         height = y + 1000 
+        image_name = datetime.nown().strftime("%Y-%m-%d-%H-%M-%S") +".png"
+        _ = ImageGrab.grab(bbox=(x, y , width, height)).save(image_name)
         
     def press_pencil_button(self):
         print("Pencil button pressed") # Just a test
