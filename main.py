@@ -1,5 +1,6 @@
 from tkinter import *
 import tkinter.colorchooser
+from PIL import ImageGrab
 
 class PixelApp:
     
@@ -89,7 +90,14 @@ class PixelApp:
 
                  
     def press_save_button(self):
-        print("Save button pressed") # Just a  test 
+        print("Save button pressed")
+        # Quick & dirty screenshot save method
+        x= self.root.winfo_rootx() + self.drawing_grid.winfo_x()
+        y= self.root.winfo_rooty() + self.drawing_grid.winfo_y() +35 # we have to add the app bar --> 35 guess and try
+        
+        
+        width  = x + 2000 # Need to be set manually regarding to monitor size
+        height = y + 1000 
         
     def press_pencil_button(self):
         print("Pencil button pressed") # Just a test
