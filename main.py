@@ -51,7 +51,7 @@ class PixelApp:
         erase_button.grid(column=10, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
         self.selected_colour_box = Frame(control_frame, borderwidth=2, relief="raised", bg="white")
-        self.selected_colour_box.grid(column=15, row=0, sticky=(N, E, S, W), padx=5, pady=5)
+        self.selected_colour_box.grid(column=15, row=0, sticky=(N, E, S, W), padx=5, pady=8)
         
         pick_colour_button = Button(control_frame, text="Pick color", command=self.press_pick_colour_button)
         pick_colour_button.grid(column=17, row=0, columnspan=3, sticky=(N, E, S, W), padx=7, pady=7)
