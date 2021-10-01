@@ -12,6 +12,7 @@ class PixelApp:
         grid_height = 10
         
         self.colour_chooser = tkinter.colorchooser.Chooser(self.root)
+        self.chosen_colour = None
         
         self.drawing_grid = Canvas(self.root)    
         self.drawing_grid.grid(column=0, row=0, sticky=(N, E, S, W))
@@ -49,8 +50,8 @@ class PixelApp:
         erase_button = Button(control_frame, text="Erase", image=self.eraser_image, command=self.press_erase_button)
         erase_button.grid(column=10, row=0, columnspan=2, sticky=(N, E, S, W), padx=5, pady=5)
         
-        selected_colour_box = Frame(control_frame, borderwidth=2, relief="raised", bg="white")
-        selected_colour_box.grid(column=15, row=0, sticky=(N, E, S, W), padx=5, pady=5)
+        self.selected_colour_box = Frame(control_frame, borderwidth=2, relief="raised", bg="white")
+        self.selected_colour_box.grid(column=15, row=0, sticky=(N, E, S, W), padx=5, pady=5)
         
         pick_colour_button = Button(control_frame, text="Pick color", command=self.press_pick_colour_button)
         pick_colour_button.grid(column=17, row=0, columnspan=3, sticky=(N, E, S, W), padx=7, pady=7)
@@ -81,8 +82,10 @@ class PixelApp:
         
     def press_pick_colour_button(self):
         colour_info = self.colour_chooser.show() 
-        print(colour_info)
-            
+        chosen = colour_info[1]
+        if chosen != None:
+            self.chosen_colour = chosen
+            self.selected_colour_box["bg"] = self.chosen_colour
         
 root = Tk()
 PixelApp(root)
